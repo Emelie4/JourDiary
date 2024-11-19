@@ -6,9 +6,6 @@ public class User {
     private String passWord;
 
 
-
-
-
     //Constructor
     public User(String firstName, String lastName, String passWord){
         this.firstName = firstName;
