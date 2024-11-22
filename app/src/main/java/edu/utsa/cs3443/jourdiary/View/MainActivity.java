@@ -1,9 +1,11 @@
-package edu.utsa.cs3443.jourdiary;
+package edu.utsa.cs3443.jourdiary.View;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.widget.Button;
+
+import edu.utsa.cs3443.jourdiary.R;
 
 public class MainActivity extends AppCompatActivity {
 
