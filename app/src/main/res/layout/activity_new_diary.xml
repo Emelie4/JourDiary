@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/brown"
+    tools:context=".NewDiary">
+
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:src="@drawable/jourlogo"
+        android:contentDescription="logo"
+        />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="392dp"
+        android:layout_centerInParent="true"
+        android:background="@color/offwhite"
+        android:gravity="top"
+        android:hint="Enter your diary here"
+        android:textSize="20sp"
+        android:inputType="text"
+        />
+
+    <Button
+        android:id="@+id/prevButton"
+        android:layout_width="160dp"
+        android:layout_height="66dp"
+        android:layout_below="@id/editText"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:backgroundTint="@color/offwhite"
+        android:fontFamily="cursive"
+        android:text="Previous"
+        android:textColor="@color/brown"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/logButton"
+        android:layout_width="160dp"
+        android:layout_height="66dp"
+        android:layout_below="@id/prevButton"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:backgroundTint="@color/offwhite"
+        android:fontFamily="cursive"
+        android:text="Diary Menu"
+        android:textColor="@color/brown"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="160dp"
+        android:layout_height="66dp"
+        android:layout_below="@id/editText"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_alignParentRight="true"
+        android:backgroundTint="@color/offwhite"
+        android:fontFamily="cursive"
+        android:text="Save"
+        android:textColor="@color/brown"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>
+
+
