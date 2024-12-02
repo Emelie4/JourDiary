@@ -1,24 +1,38 @@
 package edu.utsa.cs3443.jourdiary;
 
 import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
+import android.widget.Button;
+import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+import java.util.concurrent.Executors;
+
+import edu.utsa.cs3443.jourdiary.database.Database;
+import edu.utsa.cs3443.jourdiary.Model.DiaryEntry;
 
 public class NewDiary extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_new_diary);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+
+        EditText diaryContent = findViewById(R.id.editText);
+        Button saveButton = findViewById(R.id.saveButton);
+
+        saveButton.setOnClickListener(v -> {
+            String content = diaryContent.getText().toString();
+            if (!content.isEmpty()) {
+                String currentDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(new Date());
+
+                DiaryEntry diaryEntry = new DiaryEntry(currentDate, content);
+                Executors.newSingleThreadExecutor().execute(() -> {
+                    Database.getInstance(this).diaryEntryDao().insert(diaryEntry);
+                });
+
+                diaryContent.setText("");
+            }
         });
     }
 }

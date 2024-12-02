@@ -30,12 +30,12 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/prevDoc"
+        android:id="@+id/remButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_below="@id/newDoc"
-        android:text="Previous Diary"
+        android:text="Reminisce"
         android:fontFamily="cursive"
         android:textSize="20dp"
         android:backgroundTint="@color/offwhite"
@@ -47,7 +47,7 @@
         android:id="@+id/lastWeek"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/prevDoc"
+        android:layout_below="@id/remButton"
         android:text="Last Week"
         android:fontFamily="cursive"
         android:textSize="20dp"
