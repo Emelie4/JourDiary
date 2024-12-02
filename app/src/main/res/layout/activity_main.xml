@@ -32,5 +32,14 @@
         android:text="Sign Up"
         android:backgroundTint="@color/offwhite"
         android:textColor="@color/black" />
-</LinearLayout>
 
+    <Button
+        android:id="@+id/buttonAbout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/offwhite"
+        android:text="What is JourDiary?"
+        android:textColor="@color/black"
+        android:textStyle="italic|bold" />
+</LinearLayout>
