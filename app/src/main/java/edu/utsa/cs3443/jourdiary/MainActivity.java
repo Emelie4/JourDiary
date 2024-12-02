@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button loginButton = findViewById(R.id.buttonLogin);
         Button signUpButton = findViewById(R.id.buttonSignUp);
+        Button aboutButton = findViewById(R.id.buttonAbout);
 
         loginButton.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
@@ -23,5 +24,12 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
             startActivity(intent);
         });
+
+        aboutButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, AboutActivity.class);
+            startActivity(intent);
+        });
+
+
     }
 }
