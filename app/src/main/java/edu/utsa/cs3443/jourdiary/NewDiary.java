@@ -1,5 +1,6 @@
 package edu.utsa.cs3443.jourdiary;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,6 +21,7 @@ public class NewDiary extends AppCompatActivity {
 
         EditText diaryContent = findViewById(R.id.editText);
         Button saveButton = findViewById(R.id.saveButton);
+        Button prevButton = findViewById(R.id.prevButton);
 
         saveButton.setOnClickListener(v -> {
             String content = diaryContent.getText().toString();
@@ -33,6 +35,11 @@ public class NewDiary extends AppCompatActivity {
 
                 diaryContent.setText("");
             }
+        });
+
+        prevButton.setOnClickListener(v -> {
+            Intent intent = new Intent(NewDiary.this, DiaryLogActivity.class);
+            startActivity(intent);
         });
     }
 }
