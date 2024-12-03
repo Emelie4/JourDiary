@@ -25,7 +25,7 @@
         android:layout_centerInParent="true"
         android:layout_marginTop="-18dp"
         android:fontFamily="serif"
-        android:text="JourDiary is a virtual, simple to use diary! "
+        android:text="JourDiary is a virtual, simple to use diary! Login and registration pages are included for user convenience. Additionally, the user will be allowed to &quot;reminisce&quot; on previous entries, as well as look at entries from the past week or month."
         android:textColor="@color/offwhite" />
 
     <TextView
