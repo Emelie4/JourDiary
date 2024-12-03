@@ -47,3 +47,21 @@ JourDiary is built using the following technologies and frameworks:
 1. Clone the repository:
    ```bash
    git clone https://github.com/Emelie4/JourDiary.git
+2. Open the project in Android Studio.
+3. Sync the project with Gradle.
+4. Run the application:
+Option 1: On an emulator.
+Option 2: On a physical Android device.
+
+---
+
+## Contact Us
+If you have any questions, suggestions, or need support, feel free to contact us:  
+- **GitHub Issues**: [Submit an Issue](https://github.com/Emelie4/JourDiary/issues)  
+- **Contributors**:  
+  - Chiemelie Chinweuba – [GitHub](https://github.com/Emelie4)  
+  - Alec Gomeyac – [GitHub](https://github.com/AlecCaesar)  
+  - Angel Nguyen – [GitHub](https://github.com/AsianBMO)  
+  - Francisco Urteaga – [GitHub](https://github.com/fdu2003)  
+  - Mahya Mottaghi – [GitHub](https://github.com/MahyaMottaghi)
+
