@@ -10,6 +10,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
+
+import java.util.List;
 import java.util.concurrent.Executors;
 
 import edu.utsa.cs3443.jourdiary.database.Database;
@@ -33,11 +35,57 @@ public class DiaryLogActivity extends AppCompatActivity {
         Button reminisceButton = findViewById(R.id.remButton);
         Button lastWeek = findViewById(R.id.lastWeek);
         Button lastMonth = findViewById(R.id.lastMonth);
+        Button prevButton = findViewById(R.id.prevButton);
 
         newDoc.setOnClickListener(v -> {
             Intent intent = new Intent(DiaryLogActivity.this, NewDiary.class);
             startActivity(intent);
         });
+
+        lastWeek.setOnClickListener(v -> {
+            Executors.newSingleThreadExecutor().execute(() -> {
+                List<DiaryEntry> lastWeekEntries = Database.getInstance(this).diaryEntryDao().getLastWeekEntries();
+
+                runOnUiThread(() -> {
+                    if (lastWeekEntries != null && !lastWeekEntries.isEmpty()) {
+                        StringBuilder message = new StringBuilder();
+                        for (DiaryEntry entry : lastWeekEntries) {
+                            message.append("Date: ").append(entry.date).append("\n").append(entry.content).append("\n\n");
+                        }
+                        new AlertDialog.Builder(this)
+                                .setTitle("Entries from Last Week")
+                                .setMessage(message.toString())
+                                .setPositiveButton("OK", null)
+                                .show();
+                    } else {
+                        Toast.makeText(this, "No entries from the past week!", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            });
+        });
+
+        lastMonth.setOnClickListener(v -> {
+            Executors.newSingleThreadExecutor().execute(() -> {
+                List<DiaryEntry> lastMonthEntries = Database.getInstance(this).diaryEntryDao().getLastMonthEntries();
+
+                runOnUiThread(() -> {
+                    if (lastMonthEntries != null && !lastMonthEntries.isEmpty()) {
+                        StringBuilder message = new StringBuilder();
+                        for (DiaryEntry entry : lastMonthEntries) {
+                            message.append("Date: ").append(entry.date).append("\n").append(entry.content).append("\n\n");
+                        }
+                        new AlertDialog.Builder(this)
+                                .setTitle("Entries from Last Month")
+                                .setMessage(message.toString())
+                                .setPositiveButton("OK", null)
+                                .show();
+                    } else {
+                        Toast.makeText(this, "No entries from the past month!", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            });
+        });
+
 
         reminisceButton.setOnClickListener(v -> {
             Executors.newSingleThreadExecutor().execute(() -> {
@@ -51,11 +99,15 @@ public class DiaryLogActivity extends AppCompatActivity {
                                 .setPositiveButton("OK", null)
                                 .show();
                     } else {
-                        Toast.makeText(this, "No memories to reminisce! Create Some!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "No memories to reminisce! Create some!", Toast.LENGTH_SHORT).show();
                     }
                 });
             });
         });
 
+        prevButton.setOnClickListener(v -> {
+            Intent intent = new Intent(DiaryLogActivity.this, MainActivity.class);
+            startActivity(intent);
+        });
     }
 }
