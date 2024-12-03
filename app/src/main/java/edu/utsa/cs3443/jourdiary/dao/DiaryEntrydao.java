@@ -7,6 +7,11 @@ import androidx.room.Query;
 import java.util.List;
 import edu.utsa.cs3443.jourdiary.Model.DiaryEntry;
 
+/**
+* Represents the Data Access Object (DAO) for Diary Entries.
+* @author Team Skittlez
+*/
+
 @Dao
 public interface DiaryEntrydao {
 
