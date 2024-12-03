@@ -8,6 +8,11 @@ import androidx.room.RoomDatabase;
 import edu.utsa.cs3443.jourdiary.dao.DiaryEntrydao;
 import edu.utsa.cs3443.jourdiary.Model.DiaryEntry;
 
+/**
+* Represents the Database for Diary Entries.
+* @author Team Skittlez
+*/
+
 @androidx.room.Database(entities = {DiaryEntry.class}, version = 1, exportSchema = false)
 public abstract class Database extends RoomDatabase {
 
@@ -23,6 +28,9 @@ public abstract class Database extends RoomDatabase {
                     "diary_database"
             ).fallbackToDestructiveMigration().build();
         }
+        /**
+        * @return Database instance
+        */
         return instance;
     }
 }
