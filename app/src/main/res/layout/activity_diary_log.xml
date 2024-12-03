@@ -81,19 +81,4 @@
         android:textSize="20dp"
         android:textColor="@color/brown"
         android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/contactButton"
-        android:layout_width="159dp"
-        android:layout_height="66dp"
-        android:layout_below="@id/lastMonth"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="60dp"
-        android:backgroundTint="@color/offwhite"
-        android:text="Contact Us"
-        android:fontFamily="cursive"
-        android:textSize="20dp"
-        android:textColor="@color/brown"
-        android:textStyle="bold" />
-
 </RelativeLayout>
